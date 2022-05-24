@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tania: Choose Your Own Adventure Game</title>
+</head>
+<body>
+    <div id="main-frame">
+        <h1 id="chapter-number"></h1>
+        <p>You arrive in Rinport after a long journey upon The Sea Mist.
+            After months out to sea, a hot meal and a warm bed sounds amazing!
+        </p>
+        <button id="choice-1">Find an Inn.</button>
+        <button id="choice-2">Explore the city.</button>
+    </div>
+
+    <script>
+        const title = document.querySelector('h1');
+        const para = document.querySelector('p');
+        const choiceOne = document.getElementById('choice-1');
+        const choiceTwo = document.getElementById('choice-2');
+
+        choiceOne.addEventListener('click', () => {
+            para.textContent = "You make your way through the city and find a placed called The Kraken's Nest. The smell of roasted mutton, fresh bread and sour beer greet your nostrils in a tantilizing way.";
+            choiceOne.textContent = 'Go inside.';
+            choiceTwo.textContent = 'Explore the city.';
+
+            choiceOne.addEventListener('click', () => {
+                para.textContent = "You enter a lively place! People all around laughing, dancing, eating and enjoying themselves. Next to the hearth, a minstrel is playing an upbeat tune keeping the crowds attention to the fun times to be had. As you're taking in your surroundings a young maiden carries a large tray that's loaded up with large hunks of roast mutton, fresh bread and cream, a dark frothy beer and whisks her way through the crowd to set it at a table. The delicious smells make your stomach rumble, as you've forgotten how delicious a hot meal can be. Further in to the building, through the crowd, is an old bar made out of pieces of drift wood. A Dwarf with a long beard stands behind the counter, wiping out an empty mug."
+                choiceOne.textContent = "Talk to the barkeep.";
+                choiceTwo.textContent = "Find a table.";
+
+                choiceOne.addEventListener('click', () => {
+
+                })
+            })
+        })
+    </script>
+</body>
+</html>
