@@ -15,17 +15,18 @@
         <button id="choice-1">Find an Inn.</button>
         <button id="choice-2">Explore the city.</button>
     </div>
-
+<!--All dialogue and choices added.-->
     <script>
         const title = document.querySelector('h1');
         const para = document.querySelector('p');
         const choiceOne = document.getElementById('choice-1');
         const choiceTwo = document.getElementById('choice-2');
+        const demoEnd = "End of Demo";
 
         choiceOne.addEventListener('click', () => {
             para.textContent = "You make your way through the city and find a placed called The Kraken's Nest. The smell of roasted mutton, fresh bread and sour beer greet your nostrils in a tantilizing way.";
             choiceOne.textContent = 'Go inside.';
-            choiceTwo.textContent = 'Explore the city.';
+            choiceTwo.textContent = 'Find another place.';
 
             choiceOne.addEventListener('click', () => {
                 para.textContent = "You enter a lively place! People all around laughing, dancing, eating and enjoying themselves. Next to the hearth, a minstrel is playing an upbeat tune keeping the crowds attention to the fun times to be had. As you're taking in your surroundings a young maiden carries a large tray that's loaded up with large hunks of roast mutton, fresh bread and cream, a dark frothy beer and whisks her way through the crowd to set it at a table. The delicious smells make your stomach rumble, as you've forgotten how delicious a hot meal can be. Further in to the building, through the crowd, is an old bar made out of pieces of drift wood. A Dwarf with a long beard stands behind the counter, wiping out an empty mug."
@@ -33,10 +34,137 @@
                 choiceTwo.textContent = "Find a table.";
 
                 choiceOne.addEventListener('click', () => {
+                    para.textConent = "You approach the Dwarf that's behind the bar. He stops wiping out the mug and looks up to you. \"Eh, what'll it be there laddy?\"";
+                    choiceOne.textContent = "Ask for food and a room.";
+                    choiceTwo.textContent = '"Bring me ome whiskey, this is my kind of evening!"';
 
+                    choiceOne.addEventListener('click', () => {
+                        para.textContent = '"Aye laddy, I have just what ye need!" The Dwarf rummages through a drawer and pulls out an ornate brass key. "Upstairs, room number 3. You\'ll find it furnished, and clean. I will also send up a platter of food and Ale for you to enjoy. That\'ll be 1 gold."';
+                        choiceOne.textContent = 'Pay 1 Gold.';
+                        choiceTwo.textContent = 'Try to haggle.'
+
+                        choiceOne.addEventListener ('click', () => {
+                            para.textContent = 'You reach into your coin-purse and pull out 1 gold coin and lay it on the counter. The dwarf grabs the coin and bites it. "Thank ye, I\'m sure you\'ll be most happy. Would ye like our Mutton for dinner or shall I have our cook prepare you something else?"';
+                            choiceOne.textContent = 'Enjoy the Mutton';
+                            choiceTwo.textContent = 'I\'ll take something else.'
+
+                            alert(demoEnd);
+                        })
+
+                        choiceTwo.addEventListener('click', () => {
+                            para.textContent = 'You scoff at that price. "1 gold for food and a cheap room at a place called \'The Kraken\'s Nest\'?!? It\'s a freaking nest! I\'m just passing through, can\'t you help me out with that price just a bit? I can pay...."';
+                            choiceOne.textContent = '3 silver pieces.';
+                            choiceTwo.textContent = '8 silver pieces.';
+
+                            alert(demoEnd);
+                        })
+                    })
+                    
+                    choiceTwo.addEventListener('click', () => {
+                        para.textContent = '"Of course! This is going to be a great evening! It\'s Macket\'s birthday tonight! She\'s the one in the blue dress dancing by the Minstrel." He pours out a glass of a dark whiskey. The smell draws tears to your eyes. "Shall I keep your tab open or would you like to pay now?"'
+                        choiceOne.textContent = 'Pay 1 silver';
+                        choiceTwo.textContent = 'Keep tab open';
+
+                        choiceOne.addEventListener('click', () => {
+                            para.textContent = 'You reach in to your coin-purse and pull out 1 silver coin and set it on the counter. The Dwarf picks up the coin and bites it. "Ahh thank ye laddy! Go enjoy yourself and if ye need anything else I\'ll be around." He says as he goes back to wiping out some more mugs. You make your way away from the counter, whiskey in hand, and walk through the crowd. You see many people dancing and having a great time.'
+                            choiceOne.textContent = 'Find a table.';
+                            choiceTwo.textContent = 'Make some friends.';
+
+                            alert(demoEnd);
+                        })
+
+                        choiceTwo.addEventListener('click', () =>{
+                            para.textContent = '"Aye laddy" The Dwarf winks at you. "I\'ll be keeping it open until you say otherwise. Now go enjoy yourself! Macket\'s birthday only comes once a year!" You smile back to the Dwarf and turn back towards the party. You slowly make your way through the crowd. You see Macket dancing next to the Minstrel and are sure she\'s having a great time. With this many people it could be easy to make some friends, or there is an empty table in the corner.'
+                            choiceOne.textContent = 'Meet people.';
+                            choiceTwo.textContent = 'Hang out at the table.';
+
+                            alert(demoEnd);
+                        })
+                    })
+                })
+
+                choiceTwo.addEventListener('click', () => {
+                    para.textContent = 'As you look around the room you see an empty table in a corner. You walk over to it and sit down as the minstrel starts playing another lively song. Not long after you sit down, the same maid comes over to your table. "Why Hiya! What\'ll it be? We have mutton on special and the ale will keep you warm!" You can\'t help but notice how beautiful the girl is with her long auburn hair and shockingly blue eyes.'
+                    choiceOne.textContent = '"Some food and drink sounds great!"';
+                    choiceTwo.textContent = 'Flirt with the girl.';
+
+                    alert(demoEnd);
+                })
+            })
+
+            choiceTwo.addEventListener('click', () =>{
+                para.textContent = 'You take a mental note of The Kraken\'s Nest but it seems a little too lively for your current mood. You just want a nice, quiet evening in a warm bed with a full belly. As you continue making your way into the city you pass quite a few groups of people whom are laughing and having a great time. Most seem to have had a bit to drink. After rounding a corner, you come upon Manny\'s Inn. It\'s a weathered, old building but looks cozy. Manny\'s Inn seems to be a quieter place.'
+                choiceOne.textContent = 'Go inside.';
+                choiceTwo.textContent = 'Find another place.';
+
+                choiceOne.addEventListener('click', () => {
+                    para.textContent = 'As you step into Manny\'s Inn, you take in the dimly lit room that once used to be a beautiful place but seems to have run down over the years. On the main wall behind the counter, a large, old painting draws your attention. It showed 5 people smiling: A human man in his early 50\'s smiling broadly, A small female gnome, a human female in chainmail armor, a vicious looking tall man, and a male half-giant. Behind the 5, looking down upon them is a huge silver dragon. As you stand at the counter, a young maid comes from the kitchens and steps in front of you. "Well hey! Why you sure came in on a beautiful evening! I just made a fresh batch of Manny\'s famous coffee! It\'s a legend around Tania! I was just telling my husband earlier, honey my great-grandfather really made something great. I sure did! Well, what will it be then?"'
+                    choiceOne.textContent = 'Ask for a coffee and a room.';
+                    choiceTwo.textContent = 'Ask about the painting.';
+
+                    alert(demoEnd);
+                })
+
+                choiceTwo.addEventListener('click', () => {
+                    para.textContent = 'Manny\'s Inn just didn\'t seem like the right place for you. You turn and continue walking through the city as the groups of people start to thin out and the houses noticeably become less prosperous and more run down. The slums of the city. As you continue on you see a few groups of rough looking individuals eying you as you approach. Not making eye contact you make to walk around them when a large man from the group drunkenly stumbles over to you, reeking of sour beer. He looks you up and down with yellowish, bloodshot eyes. "Yarfehh *Belch* What ye do be in argh area?!?"'
+                    choiceOne.textContent = 'Ignore the drunk.';
+                    choiceTwo.textContent = 'Ask him for directions.';
+
+                    alert(demoEnd);
+                })
+            })
+        })
+
+        choiceTwo.addEventListener('click', () => {
+            para.textContent = 'You make your way into the city to explore. You can always find an inn later! Rinport is a lively city, filled with well-off looking people. You pas by many house parties, a large market, and more local shops.'
+            choiceOne.textContent = 'Go shopping.';
+            choiceTwo.textContent = 'Check out a party.';
+
+            choiceOne.addEventListener('click', () => {
+                para.textContent = 'As you step into the market, the place is abuzz with shoppers and merchants shouting their wears. You pass by some food vendors, a blacksmith, alchemy shop and a street performer. Closer to the end of the market you see a man with a long black beard and large hat casting a dark shadow over their face. You notice they are looking right at you and beckoning you to come near.';
+                choiceOne.textContent = 'Approach the vendor.';
+                choiceTwo.textContent = 'Keep walking.';
+
+                choiceOne.addEventListener('click', () => {
+                    para.textContent = 'You make your way to the strange vendor. There is something intriguing about the man but you can\'t place what it is. As you step up to his shop, he cracks a grin showing greenish teeth with a terrible fishy, garlic smell. "Yeeee.... welcome to my humble shop." The man says, his voice cutting through you. "What be you searching for? I have a many great items from long lost lands, magical items, powerful items, all for a price." He grins wickedly at you.';
+                    choiceOne.textContent = 'Inspect wares.';
+                    choiceTwo.textContent = 'Nevermind.';
+                    
+                    alert(demoEnd);
+                })
+
+                choiceTwo.addEventListener('click', () => {
+                    para.textContent = 'You turn away from the bearded shopkeeper and look for something else. You hear a cackle of laughter from behind you, it\'s the bearded man.';
+                    choiceOne.textContent = 'Turn back to the bearded man.';
+                    choiceTwo.textContent = 'Keep walking.'
+
+                    alert(demoEnd);
+                })
+            })
+
+            choiceTwo.addEventListener('click', () => {
+                para.textContent = 'As you\'re walking you pass by a very large home that is clearly having a party. People are laughing and hollering outside in the yard, but it\'s all in good spirits. Not being a shy type you decide to crash the party.';
+                choiceOne.textContent = 'Talk to people outside.';
+                choiceTwo.textContent = 'Walk past everyone and head inside.';
+
+                choiceOne.addEventListener('click', () => {
+                    para.textContent = 'You walk through the open gates, passing a man and woman whom seem to be having a heated lovers quarrel, they pay you no mind. Walking up to the steps you are greeted by two men wearing finely crafted garments of emerald green silk and golden thread. Their armlet toggles were ornately crafted with a dark ebony wood and etched. The etchings in the toggles glowed a faint green hue. Both men looked young but intelligent beyond their years, but perhaps the most noticeable feature was their pointed ears. Elves! The one closest to you smiles warmly and extends a hand to you.';
+                    choiceOne.textContent = 'Smile and shake his hand.';
+                    choiceTwo.textContent = 'Ignore his hand.';
+
+                    alert(demoEnd);
+                })
+
+                choiceTwo.addEventListener('click', () => {
+                    para.textContent = 'Not wanting to dally around outside, you decide to head straight into the heart of the party. As you get to the steps you notice two finely dressed elves talking amongst themselves. The closest one smiles and nods to you as you pass. Walking through the main doors you are greeted with a wild party, there is a Gnome tossing competition in the main foyer and people all over the place.';
+                    choiceOne.textContent = 'Find a drink.';
+                    choiceTwo.textContent = 'Toss a Gnome.';
+
+                    alert(demoEnd);
                 })
             })
         })
     </script>
+
 </body>
 </html>
